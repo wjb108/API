@@ -1,8 +1,8 @@
 # Project Overview
 
-## Project Name TBD
+## Project Name
 
-The name of your project.
+TBD
 
 ## Project Description
 
