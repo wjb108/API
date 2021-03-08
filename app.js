@@ -66,6 +66,12 @@ let searchAddress = "2073%20broadway%2C%20new%20york%2C%20new%20york%2C%2010023"
   
 // }
 
+//pricing page and limits of free
+// https://www.mapbox.com/pricing/#search
+
+// search playground
+// https://docs.mapbox.com/help/getting-started/geocoding/
+
 //address syntax
 // https://api.mapbox.com/geocoding/v5/mapbox.places/103%20constituyentes%20hermosillo%20sonora%20mexico.json?access_token=pk.eyJ1Ijoic2VhcmNoLW1hY2hpbmUtdXNlci0xIiwiYSI6ImNrN2Y1Nmp4YjB3aG4zZ253YnJoY21kbzkifQ.JM5ZeqwEEm-Tonrk5wOOMw&cachebuster=1615161939168&autocomplete=true
 
