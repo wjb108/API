@@ -46,7 +46,7 @@ getStaticImage()
 
 const basePathGeo = "https://api.mapbox.com/geocoding/v5/mapbox.places"
 const GaProjectToken = "pk.eyJ1IjoicGl0YXlha2lubyIsImEiOiJja2x6dWU0MDUwMmJvMnZtOWFmazd3ZjFuIn0.kB1VDUkeZtQPBGc1lVtehQ"
-let searchAddress = "51%20w%2074th%20ST%2C%20New%20York%2C%20New%20York%2C%2010023"
+let searchAddress = "2073%20broadway%2C%20new%20york%2C%20new%20york%2C%2010023"
 
 // //selectors
 // const input = document.querySelector('input')
@@ -72,8 +72,9 @@ let searchAddress = "51%20w%2074th%20ST%2C%20New%20York%2C%20New%20York%2C%20100
 //135 Park Avenue, Greenwich, Connecticut 06830
 // https://api.mapbox.com/geocoding/v5/mapbox.places/hermosilo.json?access_token=pk.eyJ1Ijoic2VhcmNoLW1hY2hpbmUtdXNlci0xIiwiYSI6ImNrN2Y1Nmp4YjB3aG4zZ253YnJoY21kbzkifQ.JM5ZeqwEEm-Tonrk5wOOMw&cachebuster=1615161975915&autocomplete=true
 
-// 51 West 74th Street, New York, New York 10023
-// https://api.mapbox.com/geocoding/v5/mapbox.places/51%20w%2074th%20ST%2C%20New%20York%2C%20New%20York%2C%2010023.json?access_token=pk.eyJ1Ijoic2VhcmNoLW1hY2hpbmUtdXNlci0xIiwiYSI6ImNrN2Y1Nmp4YjB3aG4zZ253YnJoY21kbzkifQ.JM5ZeqwEEm-Tonrk5wOOMw&cachebuster=1615163303674&autocomplete=true
+
+//2073 Broadway, New York, New York 10023
+// https://api.mapbox.com/geocoding/v5/mapbox.places/2073%20broadway%2C%20new%20york%2C%20new%20york%2C%2010023.json?access_token=pk.eyJ1Ijoic2VhcmNoLW1hY2hpbmUtdXNlci0xIiwiYSI6ImNrN2Y1Nmp4YjB3aG4zZ253YnJoY21kbzkifQ.JM5ZeqwEEm-Tonrk5wOOMw&cachebuster=1615165101319&autocomplete=true
 
 //city syntax
 // https://api.mapbox.com/geocoding/v5/mapbox.places/hermosilo.json?access_token=pk.eyJ1Ijoic2VhcmNoLW1hY2hpbmUtdXNlci0xIiwiYSI6ImNrN2Y1Nmp4YjB3aG4zZ253YnJoY21kbzkifQ.JM5ZeqwEEm-Tonrk5wOOMw&cachebuster=1615161975915&autocomplete=true
