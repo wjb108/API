@@ -5,6 +5,7 @@ const basePath = "https://api.mapbox.com/styles/v1/mapbox/light-v10/static"
 const DefaultPublicToken = "pk.eyJ1IjoicGl0YXlha2lubyIsImEiOiJja2x6Y3o3ZjQwYXNnMm9xc3d4OXZ2bDNyIn0.VGWn1lnzEKtxRkSatphaLg"
 let longitude = "";
 let latitude = "";
+const markerIcon =`pin-s-l+000`
 let zoom = 15;
 let rotateMap = 0; // optional parameter
 let width = 300;
@@ -62,7 +63,7 @@ function removeImage() {
 }
 
 async function getStaticImage(LongCoord, LatCoord) {
-  const urlImage = `${basePath}/${LongCoord},${LatCoord},${zoom},${rotateMap}/${width}x${height}?access_token=${DefaultPublicToken}`
+  const urlImage = `${basePath}/${markerIcon}(${LongCoord},${LatCoord})/${LongCoord},${LatCoord},${zoom},${rotateMap}/${width}x${height}?access_token=${DefaultPublicToken}`
   // console.log(url);
   try {
     const apiCall = await axios.get(urlImage)
