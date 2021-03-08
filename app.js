@@ -56,6 +56,7 @@ function getText(event) {
 
 function runGetCoordinates(event) {
   event.preventDefault();
+  // console.log(`${inputAddress.value} `); could also string interpolate by const variables on rows 24-30 and pass through to formatAddress function
   formatAddress(`${inputValues["street-number"]} ${inputValues["address"]} ${inputValues["city"]} ${inputValues["state"]} ${inputValues["zipcode"]} `)
   console.log(searchAddress);
   getCoordinates()
