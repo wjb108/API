@@ -18,22 +18,23 @@ let height = 200;
 const basePathGeo = "https://api.mapbox.com/geocoding/v5/mapbox.places"
 const GaProjectToken = "pk.eyJ1IjoicGl0YXlha2lubyIsImEiOiJja2x6dWU0MDUwMmJvMnZtOWFmazd3ZjFuIn0.kB1VDUkeZtQPBGc1lVtehQ"
 let searchAddress = ""
+let inputValues = {}
 
 //Selectors
 const divContainer = document.querySelector('.div-container')
 const inputAddress = document.querySelector('input#address')
 const btn = document.querySelector('button#address')
-// const inputStreetNumber = document.querySelector('input#street-number')
-// const inputZipcode = document.querySelector('input#zipcode')
-// const inputCity = document.querySelector('input#city')
-// const inputState = document.querySelector('input#state')
+const inputStreetNumber = document.querySelector('input#street-number')
+const inputZipcode = document.querySelector('input#zipcode')
+const inputCity = document.querySelector('input#city')
+const inputState = document.querySelector('input#state')
 
 //Event Listeners
-inputAddress.addEventListener('keypress', getText)
-// inputStreetNumber.addEventListener('keypress', getText)
-// inputZipcode.addEventListener('keypress', getText)
-// inputCity.addEventListener('keypress', getText)
-// inputStreetNumber.addEventListener('keypress', getText)
+inputAddress.addEventListener('keyup', getText)
+inputStreetNumber.addEventListener('keyup', getText)
+inputZipcode.addEventListener('keyup', getText)
+inputCity.addEventListener('keyup', getText)
+inputState.addEventListener('keyup', getText)
 btn.addEventListener('click', runGetCoordinates)
 
 function formatAddress(address) {
@@ -44,16 +45,18 @@ function formatAddress(address) {
 }
 
 function getText(event) {
-  // console.dir(event)
-  inputAddress.textContent = event.target.value // don't really need this for it to work
+  inputValues[event.target.id] = event.target.value
+  console.dir(inputValues)
+  // inputAddress.textContent = event.target.value // don't really need this for it to work
   // console.log(input.textContent = event.target.value)
   // console.log(event.target.value)
   // console.log(input.textContent);
-  formatAddress(event.target.value)
+  // formatAddress(event.target.value)
 }
 
 function runGetCoordinates(event) {
   event.preventDefault();
+  formatAddress(`${inputValues["street-number"]} ${inputValues["address"]} ${inputValues["city"]} ${inputValues["state"]} ${inputValues["zipcode"]} `)
   console.log(searchAddress);
   getCoordinates()
 }
