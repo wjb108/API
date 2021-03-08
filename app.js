@@ -70,12 +70,19 @@ function renderImage(staticImage) {
   
 }
 
+function removeImage() {
+  while (divContainer.firstChild) {
+    divContainer.removeChild(divContainer.firstChild)
+  }
+}
+
 async function getStaticImage(LongCoord, LatCoord) {
   const urlImage = `${basePath}/${LongCoord},${LatCoord},${zoom},${rotateMap}/${width}x${height}?access_token=${DefaultPublicToken}`
   // console.log(url);
   try {
     const apiCall = await axios.get(urlImage)
     // console.log(apiCall);
+    removeImage()
     renderImage(apiCall)
   } catch (error) {
     console.log(error.message);
