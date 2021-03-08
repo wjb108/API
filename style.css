@@ -1,12 +1,12 @@
-.div-container{
+.input-address{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 img {
   height: 400px;
   width: 400px;
 }
-input#address{
+/* input#address{
   padding: 5px 100px 5px 100px;
-}
+} */

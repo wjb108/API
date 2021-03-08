@@ -5,7 +5,7 @@ const basePath = "https://api.mapbox.com/styles/v1/mapbox/light-v10/static"
 const DefaultPublicToken = "pk.eyJ1IjoicGl0YXlha2lubyIsImEiOiJja2x6Y3o3ZjQwYXNnMm9xc3d4OXZ2bDNyIn0.VGWn1lnzEKtxRkSatphaLg"
 let longitude = "";
 let latitude = "";
-const markerIcon =`pin-s-marker`
+const markerIcon = `pin-s-marker`
 let zoom = 15;
 let rotateMap = 0; // optional parameter
 let width = 300;
@@ -21,11 +21,19 @@ let searchAddress = ""
 
 //Selectors
 const divContainer = document.querySelector('.div-container')
-const input = document.querySelector('input#address')
+const inputAddress = document.querySelector('input#address')
 const btn = document.querySelector('button#address')
+// const inputStreetNumber = document.querySelector('input#street-number')
+// const inputZipcode = document.querySelector('input#zipcode')
+// const inputCity = document.querySelector('input#city')
+// const inputState = document.querySelector('input#state')
 
 //Event Listeners
-input.addEventListener('keypress', getText)
+inputAddress.addEventListener('keypress', getText)
+// inputStreetNumber.addEventListener('keypress', getText)
+// inputZipcode.addEventListener('keypress', getText)
+// inputCity.addEventListener('keypress', getText)
+// inputStreetNumber.addEventListener('keypress', getText)
 btn.addEventListener('click', runGetCoordinates)
 
 function formatAddress(address) {
@@ -37,7 +45,7 @@ function formatAddress(address) {
 
 function getText(event) {
   // console.dir(event)
-  input.textContent = event.target.value
+  inputAddress.textContent = event.target.value // don't really need this for it to work
   // console.log(input.textContent = event.target.value)
   // console.log(event.target.value)
   // console.log(input.textContent);
