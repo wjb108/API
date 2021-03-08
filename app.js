@@ -6,8 +6,8 @@
 
 const basePath = "https://api.mapbox.com/styles/v1/mapbox/light-v10/static"
 const DefaultPublicToken = "pk.eyJ1IjoicGl0YXlha2lubyIsImEiOiJja2x6Y3o3ZjQwYXNnMm9xc3d4OXZ2bDNyIn0.VGWn1lnzEKtxRkSatphaLg"
-let longitude = -110.96018299693372;
-let latitude = 29.12420795709416;
+let longitude = -73.982272;
+let latitude = 40.778538;
 let zoom = 15;
 let rotateMap = 0; // optional parameter
 let width = 300;
