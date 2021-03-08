@@ -1,9 +1,6 @@
-// https://api.mapbox.com/styles/v1/mapbox/light-v10/static/-77.0397,38.8974,5,0/300x200?access_token=pk.eyJ1IjoicGl0YXlha2lubyIsImEiOiJja2x6Y3o3ZjQwYXNnMm9xc3d4OXZ2bDNyIn0.VGWn1lnzEKtxRkSatphaLg
-// as per
-// https://docs.mapbox.com/playground/static/
-
-//Static Image API
-
+//Mapbox Static Images API
+//API Documentation
+// https://docs.mapbox.com/api/maps/static-images/
 const basePath = "https://api.mapbox.com/styles/v1/mapbox/light-v10/static"
 const DefaultPublicToken = "pk.eyJ1IjoicGl0YXlha2lubyIsImEiOiJja2x6Y3o3ZjQwYXNnMm9xc3d4OXZ2bDNyIn0.VGWn1lnzEKtxRkSatphaLg"
 let longitude = "";
@@ -12,29 +9,21 @@ let zoom = 15;
 let rotateMap = 0; // optional parameter
 let width = 300;
 let height = 200;
-// let tiltMap = ; // optional parameter
-29.12420795709416, -110.96018299693372
-// selector
-const divContainer = document.querySelector('.div-container')
 
-
-
-
-// https://api.mapbox.com/{endpoint}?access_token={your_access_token}
-
-
-//Geocoding API
+// Mapbox Geocoding API
+//API Documentation
 // https://docs.mapbox.com/api/search/geocoding/
 
 const basePathGeo = "https://api.mapbox.com/geocoding/v5/mapbox.places"
 const GaProjectToken = "pk.eyJ1IjoicGl0YXlha2lubyIsImEiOiJja2x6dWU0MDUwMmJvMnZtOWFmazd3ZjFuIn0.kB1VDUkeZtQPBGc1lVtehQ"
 let searchAddress = "2073%20broadway%2C%20new%20york%2C%20new%20york%2C%2010023"
 
-//selectors
+//Selectors
+const divContainer = document.querySelector('.div-container')
 const input = document.querySelector('input#address')
 const btn = document.querySelector('button#address')
 
-// // event listeners
+//Event Listeners
 input.addEventListener('keypress', getText)
 btn.addEventListener('click', runGetCoordinates)
 
@@ -44,8 +33,6 @@ function formatAddress(address) {
   formatCommasInString = formatSpacesInString.replaceAll(",", "%2C")
   searchAddress = formatCommasInString
 }
-
-
 
 function getText(event) {
   // console.dir(event)
@@ -60,14 +47,12 @@ function runGetCoordinates(event) {
   event.preventDefault();
   console.log(searchAddress);
   getCoordinates()
-  
 }
 
 function renderImage(staticImage) {
   const staticImageHTML = document.createElement('img')
   staticImageHTML.src = staticImage.config.url
   divContainer.appendChild(staticImageHTML)
-  
 }
 
 function removeImage() {
@@ -88,7 +73,6 @@ async function getStaticImage(LongCoord, LatCoord) {
     console.log(error.message);
   }
 }
-
 
 function stripGeoCoordinates(coordinates) {
   let longitude = coordinates[0];
@@ -113,13 +97,7 @@ async function getCoordinates() {
 
 // getCoordinates()
 
-//take user input of address
 
-
-// function getCountryInput() {
-//   const promptOne = window.prompt("What country are you in?")
-//   input.innerText = promptOne
-// }
 //pricing page and limits of free
 // https://www.mapbox.com/pricing/#search
 
