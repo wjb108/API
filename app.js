@@ -16,7 +16,7 @@ let height = 200;
 
 const basePathGeo = "https://api.mapbox.com/geocoding/v5/mapbox.places"
 const GaProjectToken = "pk.eyJ1IjoicGl0YXlha2lubyIsImEiOiJja2x6dWU0MDUwMmJvMnZtOWFmazd3ZjFuIn0.kB1VDUkeZtQPBGc1lVtehQ"
-let searchAddress = "2073%20broadway%2C%20new%20york%2C%20new%20york%2C%2010023"
+let searchAddress = ""
 
 //Selectors
 const divContainer = document.querySelector('.div-container')
