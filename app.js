@@ -66,46 +66,58 @@ function runGetCoordinates(event) {
   getCoordinates()
 }
 
-function renderImage(staticImage) {
-  // const mapboxDiv = document.createElement('div')
-  // mapboxDiv.id.add('map')
-  // mapboxDiv.style.add('width')
-  // mapboxDiv.style.add('height')
-  // mapboxDiv.width = 400px
-  // mapboxDiv.height = 300px
-  // bodyHTML.appendChild(mapboxDiv)
-  // console.log(mapboxDiv);
+// function renderImage(staticImage) {
+//   // const mapboxDiv = document.createElement('div')
+//   // mapboxDiv.id.add('map')
+//   // mapboxDiv.style.add('width')
+//   // mapboxDiv.style.add('height')
+//   // mapboxDiv.width = 400px
+//   // mapboxDiv.height = 300px
+//   // bodyHTML.appendChild(mapboxDiv)
+//   // console.log(mapboxDiv);
 
-  const staticImageImg = document.createElement('img')
-  staticImageImg.src = staticImage.config.url
-  divContainer.appendChild(staticImageImg)
+//   const staticImageImg = document.createElement('img')
+//   staticImageImg.src = staticImage.config.url
+//   divContainer.appendChild(staticImageImg)
+// }
+
+mapboxgl.accessToken = 'pk.eyJ1IjoicGl0YXlha2lubyIsImEiOiJja2x6Y3o3ZjQwYXNnMm9xc3d4OXZ2bDNyIn0.VGWn1lnzEKtxRkSatphaLg';
+
+function renderDynamicMap(LongCoordinate, LatCoordinate) {
+  var map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    center: [LongCoordinate, LatCoordinate], // starting position [lng, lat]
+    zoom: 15 // starting zoom
+  });
 }
 
-function removeImage() {
-  while (divContainer.firstChild) {
-    divContainer.removeChild(divContainer.firstChild)
-  }
-}
 
-async function getStaticImage(LongCoord, LatCoord) {
-  const urlImage = `${basePath}/${markerIcon}(${LongCoord},${LatCoord})/${LongCoord},${LatCoord},${zoom},${rotateMap}/${width}x${height}?access_token=${DefaultPublicToken}`
-  console.log(urlImage);
-  try {
-    const apiCall = await axios.get(urlImage)
-    // console.log(apiCall);
-    removeImage()
-    renderImage(apiCall)
-  } catch (error) {
-    console.log(error.message);
-  }
-}
+// function removeImage() {
+//   while (divContainer.firstChild) {
+//     divContainer.removeChild(divContainer.firstChild)
+//   }
+// }
+
+// async function getStaticImage(LongCoord, LatCoord) {
+//   const urlImage = `${basePath}/${markerIcon}(${LongCoord},${LatCoord})/${LongCoord},${LatCoord},${zoom},${rotateMap}/${width}x${height}?access_token=${DefaultPublicToken}`
+//   console.log(urlImage);
+//   try {
+//     const apiCall = await axios.get(urlImage)
+//     // console.log(apiCall);
+//     removeImage()
+//     renderDynamicMap(apiCall)
+//   } catch (error) {
+//     // console.log(error.message);
+//   }
+// }
 
 function stripGeoCoordinates(coordinates) {
   let longitude = coordinates[0];
   // console.log(longitude);
   let latitude = coordinates[1];
   // console.log(latitude);
-  getStaticImage(longitude,latitude)
+  renderDynamicMap(longitude,latitude)
 }
 
 async function getCoordinates() {
