@@ -2,11 +2,73 @@
   display: flex;
   flex-direction: row;
 }
-
-img {
-  height: 400px;
-  width: 400px;
+body {
+  background-color: #FFF8EC;
 }
-/* input#address{
-  padding: 5px 100px 5px 100px;
-} */
+header {
+  background-color: #FFFFFF;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+}
+
+.home-icon-container {
+  height: 76px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 25px;
+}
+
+.localsumer-logo  {
+  height: 50;
+  width: 131;
+}
+
+.links-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* background-color: red; */
+  padding: 0px 40px 0px 40px;
+  align-items: center;
+  
+}
+.links {
+  display: flex;
+  padding: 5px 30px 5px 30px;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #636569;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 400;
+  font-style: regular;
+}
+.register{
+  border: solid #24272A;
+  border-width: 1px;
+  border-radius: 4px;
+}
+a.links:hover{
+  color: #EFE0E0;
+
+}
+
+input {
+  background-color: #FFFFFF;
+  border: none;
+  color: #636569;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+h1 {
+  color: #24272A;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 500;
+}

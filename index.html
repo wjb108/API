@@ -6,14 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
   <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
   <script defer src="./app.js"></script>
 
 </head>
+<header>
+  <nav class="navbar">
+    <div class="home-icon-container">
+      <img class="localsumer-logo" src="./localsumer.png" alt="localsumer-icon">
+    </div>
+    <div class="links-container">
+      <a class="links login" href="">Log In</a>
+      <a class="links register" href="">Register</a>
+    </div>
+  </nav>
+</header>
 <body>
-  <div class="div-container" >Type in an address</div>
+  <!-- <div class="div-container" ></div> -->
+  <h1>Where is your business located?</h1>
   <div class="input-address">
     <input type="text" id="street-number" placeholder="Street Number">
     <input type="text" id="address" placeholder="Street Name">
@@ -22,9 +37,11 @@
     <input type="text" id="zipcode" placeholder="Zipcode">
     <button id="address">Search</button>
   </div>
+
   <!-- Below: as per Mapbox API -->
   <div id='map' style='width: 400px; height: 300px;'></div>
  
 </body>
+<footer></footer>
 
 </html>

@@ -2,7 +2,7 @@
 //API Documentation
 // https://docs.mapbox.com/api/maps/static-images/
 const basePath = "https://api.mapbox.com/styles/v1/mapbox/light-v10/static"
-const DefaultPublicToken = "pk.eyJ1IjoicGl0YXlha2lubyIsImEiOiJja2x6Y3o3ZjQwYXNnMm9xc3d4OXZ2bDNyIn0.VGWn1lnzEKtxRkSatphaLg"
+mapboxgl.accessToken = 'pk.eyJ1IjoicGl0YXlha2lubyIsImEiOiJja2x6Y3o3ZjQwYXNnMm9xc3d4OXZ2bDNyIn0.VGWn1lnzEKtxRkSatphaLg';
 let longitude = "";
 let latitude = "";
 const markerIcon = `pin-s-marker`
@@ -21,7 +21,7 @@ let searchAddress = ""
 let inputValues = {}
 
 //Selectors
-const divContainer = document.querySelector('.div-container')
+// const divContainer = document.querySelector('.div-container')
 const inputAddress = document.querySelector('input#address')
 const btn = document.querySelector('button#address')
 const inputStreetNumber = document.querySelector('input#street-number')
@@ -66,23 +66,6 @@ function runGetCoordinates(event) {
   getCoordinates()
 }
 
-// function renderImage(staticImage) {
-//   // const mapboxDiv = document.createElement('div')
-//   // mapboxDiv.id.add('map')
-//   // mapboxDiv.style.add('width')
-//   // mapboxDiv.style.add('height')
-//   // mapboxDiv.width = 400px
-//   // mapboxDiv.height = 300px
-//   // bodyHTML.appendChild(mapboxDiv)
-//   // console.log(mapboxDiv);
-
-//   const staticImageImg = document.createElement('img')
-//   staticImageImg.src = staticImage.config.url
-//   divContainer.appendChild(staticImageImg)
-// }
-
-mapboxgl.accessToken = 'pk.eyJ1IjoicGl0YXlha2lubyIsImEiOiJja2x6Y3o3ZjQwYXNnMm9xc3d4OXZ2bDNyIn0.VGWn1lnzEKtxRkSatphaLg';
-
 function renderDynamicMap(LongCoordinate, LatCoordinate) {
   var map = new mapboxgl.Map({
     container: 'map', // container ID
@@ -90,26 +73,15 @@ function renderDynamicMap(LongCoordinate, LatCoordinate) {
     center: [LongCoordinate, LatCoordinate], // starting position [lng, lat]
     zoom: 15 // starting zoom
   });
+  var marker = new mapboxgl.Marker()
+  .setLngLat([LongCoordinate, LatCoordinate])
+  .addTo(map);
 }
 
-
-// function removeImage() {
-//   while (divContainer.firstChild) {
-//     divContainer.removeChild(divContainer.firstChild)
-//   }
-// }
-
-// async function getStaticImage(LongCoord, LatCoord) {
-//   const urlImage = `${basePath}/${markerIcon}(${LongCoord},${LatCoord})/${LongCoord},${LatCoord},${zoom},${rotateMap}/${width}x${height}?access_token=${DefaultPublicToken}`
-//   console.log(urlImage);
-//   try {
-//     const apiCall = await axios.get(urlImage)
-//     // console.log(apiCall);
-//     removeImage()
-//     renderDynamicMap(apiCall)
-//   } catch (error) {
-//     // console.log(error.message);
-//   }
+// function renderMarker(LongCoordinate, LatCoordinate) {
+//   var marker = new mapboxgl.Marker()
+//   .setLngLat([LongCoordinate, LatCoordinate])
+//   .addTo(map);
 // }
 
 function stripGeoCoordinates(coordinates) {
@@ -133,8 +105,43 @@ async function getCoordinates() {
   }
 }
 
+// function renderImage(staticImage) {
+//   // const mapboxDiv = document.createElement('div')
+//   // mapboxDiv.id.add('map')
+//   // mapboxDiv.style.add('width')
+//   // mapboxDiv.style.add('height')
+//   // mapboxDiv.width = 400px
+//   // mapboxDiv.height = 300px
+//   // bodyHTML.appendChild(mapboxDiv)
+//   // console.log(mapboxDiv);
+
+//   const staticImageImg = document.createElement('img')
+//   staticImageImg.src = staticImage.config.url
+//   divContainer.appendChild(staticImageImg)
+// }
+
 // getCoordinates()
 
+// const DefaultPublicToken = "pk.eyJ1IjoicGl0YXlha2lubyIsImEiOiJja2x6Y3o3ZjQwYXNnMm9xc3d4OXZ2bDNyIn0.VGWn1lnzEKtxRkSatphaLg"
+
+// function removeImage() {
+//   while (divContainer.firstChild) {
+//     divContainer.removeChild(divContainer.firstChild)
+//   }
+// }
+
+// async function getStaticImage(LongCoord, LatCoord) {
+//   const urlImage = `${basePath}/${markerIcon}(${LongCoord},${LatCoord})/${LongCoord},${LatCoord},${zoom},${rotateMap}/${width}x${height}?access_token=${DefaultPublicToken}`
+//   console.log(urlImage);
+//   try {
+//     const apiCall = await axios.get(urlImage)
+//     // console.log(apiCall);
+//     removeImage()
+//     renderDynamicMap(apiCall)
+//   } catch (error) {
+//     // console.log(error.message);
+//   }
+// }
 
 //pricing page and limits of free
 // https://www.mapbox.com/pricing/#search
