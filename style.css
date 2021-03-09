@@ -1,7 +1,4 @@
-.input-address{
-  display: flex;
-  flex-direction: row;
-}
+
 body {
   background-color: #FFF8EC;
 }
@@ -57,15 +54,6 @@ a.links:hover{
   color: #EFE0E0;
 }
 
-input {
-  background-color: #FFFFFF;
-  border: none;
-  color: #636569;
-  font-family: 'Libre Franklin', sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
 h1 {
   color: #24272A;
   font-family: 'Libre Franklin', sans-serif;
@@ -78,6 +66,49 @@ h1 {
   justify-content: center;
   background-color: red;
 }
+
+.prompt-question{
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  background-color: #FFFFFF;
+  border: none;
+  color: #636569;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  padding: 10px 10px 10px 10px;
+  margin: 10px 40px 10px 40px;
+}
+.button-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+button#address{
+  background-color: #24272A;
+  color: #FFFFFF;
+  padding: 0px 20px 0px 20px;
+  border: none;
+  margin: 20px;
+  padding: 20px;
+
+
+}
+.input-address{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: seagreen;
+  margin: 10px 80px 10px 80px;
+  padding: 10px 40px 10px 40px;
+
+}
+
 footer{
   background-color: royalblue;
   
