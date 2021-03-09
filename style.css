@@ -121,6 +121,7 @@ a.links:hover{
 .prompt-question{
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 .register{
