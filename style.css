@@ -1,6 +1,7 @@
 /* HTML Elements  */
 body {
   background-color: #FFF8EC;
+  margin: 0;
 }
 
 footer{
@@ -24,7 +25,7 @@ input {
   font-family: 'Libre Franklin', sans-serif;
   font-weight: 400;
   font-style: italic;
-  padding: 10px 10px 10px 10px;
+  padding: 10px 20px 10px 20px;
   margin: 10px 40px 10px 40px;
 }
 
@@ -37,6 +38,8 @@ a.links:hover{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 20px;
+  
   /* background-color: red; */
 }
 

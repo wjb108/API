@@ -21,14 +21,12 @@ let searchAddress = ""
 let inputValues = {}
 
 //Selectors
-// const divContainer = document.querySelector('.div-container')
 const inputAddress = document.querySelector('input#address')
 const btn = document.querySelector('button#address')
 const inputStreetNumber = document.querySelector('input#street-number')
 const inputZipcode = document.querySelector('input#zipcode')
 const inputCity = document.querySelector('input#city')
 const inputState = document.querySelector('input#state')
-// const bodyHTML = document.querySelector('body')
 
 //Event Listeners
 inputAddress.addEventListener('keyup', getText)
@@ -78,11 +76,7 @@ function renderDynamicMap(LongCoordinate, LatCoordinate) {
   .addTo(map);
 }
 
-// function renderMarker(LongCoordinate, LatCoordinate) {
-//   var marker = new mapboxgl.Marker()
-//   .setLngLat([LongCoordinate, LatCoordinate])
-//   .addTo(map);
-// }
+
 
 function stripGeoCoordinates(coordinates) {
   let longitude = coordinates[0];
@@ -104,6 +98,17 @@ async function getCoordinates() {
     console.log(error.message);
   }
 }
+
+// Bits of Code no longer needed below
+
+// function renderMarker(LongCoordinate, LatCoordinate) {
+//   var marker = new mapboxgl.Marker()
+//   .setLngLat([LongCoordinate, LatCoordinate])
+//   .addTo(map);
+// }
+
+// const divContainer = document.querySelector('.div-container')
+// const bodyHTML = document.querySelector('body')
 
 // function renderImage(staticImage) {
 //   // const mapboxDiv = document.createElement('div')
