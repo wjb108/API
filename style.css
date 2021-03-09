@@ -1,57 +1,10 @@
-
+/* HTML Elements  */
 body {
   background-color: #FFF8EC;
 }
-header {
-  background-color: #FFFFFF;
-}
 
-.navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: #FFFFFF;
-}
-
-.home-icon-container {
-  height: 76px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  padding-left: 25px;
-}
-
-.localsumer-logo  {
-  height: 50;
-  width: 131;
-}
-
-.links-container{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  /* background-color: red; */
-  padding: 0px 40px 0px 40px;
-  align-items: center;
-  
-}
-.links {
-  display: flex;
-  padding: 5px 30px 5px 30px;
-  white-space: nowrap;
-  text-decoration: none;
-  color: #636569;
-  font-family: 'Libre Franklin', sans-serif;
-  font-weight: 400;
-  font-style: regular;
-}
-.register{
-  border: solid #24272A;
-  border-width: 1px;
-  border-radius: 4px;
-}
-a.links:hover{
-  color: #EFE0E0;
+footer{
+  /* background-color: royalblue; */
 }
 
 h1 {
@@ -60,16 +13,8 @@ h1 {
   font-weight: 500;
 }
 
-.body-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: red;
-}
-
-.prompt-question{
-  display: flex;
-  justify-content: center;
+header {
+  background-color: #FFFFFF;
 }
 
 input {
@@ -82,43 +27,110 @@ input {
   padding: 10px 10px 10px 10px;
   margin: 10px 40px 10px 40px;
 }
-.button-container{
+
+a.links:hover{
+  color: #EFE0E0;
+}
+
+/* Classes */
+.container-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: red; */
+}
+
+.container-button{
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-button#address{
-  background-color: #24272A;
-  color: #FFFFFF;
-  padding: 0px 20px 0px 20px;
-  border: none;
-  margin: 20px;
-  padding: 20px;
-
-
-}
-.input-address{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: seagreen;
-  margin: 10px 80px 10px 80px;
-  padding: 10px 40px 10px 40px;
-
-}
-
-footer{
-  background-color: royalblue;
-  
-}
-.footer-container{
+.container-footer{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
+.container-home-icon{
+  height: 76px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 25px;
+}
+
+.container-links{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* background-color: red; */
+  padding: 0px 40px 0px 40px;
+  align-items: center;
+}
+
+.container-mapbox-map{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px;
+}
+
 .img-footer{
   height: 152px;
+  padding: 0 10px 0 10px;
+  /* justify-content: flex-start; */
+}
+
+.input-address{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* background-color: seagreen; */
+  margin: 10px 80px 10px 80px;
+  padding: 10px 40px 10px 40px;
+}
+
+.localsumer-logo  {
+  height: 50;
+  width: 131;
+}
+
+.links {
+  display: flex;
+  padding: 5px 30px 5px 30px;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #636569;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 400;
+  font-style: regular;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+}
+
+.prompt-question{
+  display: flex;
+  justify-content: center;
+}
+
+.register{
+  border: solid #24272A;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+/* IDs */
+button#address{
+  background-color: #24272A;
+  padding: 20px;
+  color: #FFFFFF;
+  border: none;
+  margin: 20px;
 }
