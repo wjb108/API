@@ -28,6 +28,7 @@ const inputStreetNumber = document.querySelector('input#street-number')
 const inputZipcode = document.querySelector('input#zipcode')
 const inputCity = document.querySelector('input#city')
 const inputState = document.querySelector('input#state')
+// const bodyHTML = document.querySelector('body')
 
 //Event Listeners
 inputAddress.addEventListener('keyup', getText)
@@ -43,6 +44,9 @@ function formatAddress(address) {
   formatCommasInString = formatSpacesInString.replaceAll(",", "%2C")
   searchAddress = formatCommasInString
 }
+
+// how to deal with input that aren't anticipated
+
 
 function getText(event) {
   inputValues[event.target.id] = event.target.value
@@ -63,9 +67,18 @@ function runGetCoordinates(event) {
 }
 
 function renderImage(staticImage) {
-  const staticImageHTML = document.createElement('img')
-  staticImageHTML.src = staticImage.config.url
-  divContainer.appendChild(staticImageHTML)
+  // const mapboxDiv = document.createElement('div')
+  // mapboxDiv.id.add('map')
+  // mapboxDiv.style.add('width')
+  // mapboxDiv.style.add('height')
+  // mapboxDiv.width = 400px
+  // mapboxDiv.height = 300px
+  // bodyHTML.appendChild(mapboxDiv)
+  // console.log(mapboxDiv);
+
+  const staticImageImg = document.createElement('img')
+  staticImageImg.src = staticImage.config.url
+  divContainer.appendChild(staticImageImg)
 }
 
 function removeImage() {
@@ -76,7 +89,7 @@ function removeImage() {
 
 async function getStaticImage(LongCoord, LatCoord) {
   const urlImage = `${basePath}/${markerIcon}(${LongCoord},${LatCoord})/${LongCoord},${LatCoord},${zoom},${rotateMap}/${width}x${height}?access_token=${DefaultPublicToken}`
-  // console.log(url);
+  console.log(urlImage);
   try {
     const apiCall = await axios.get(urlImage)
     // console.log(apiCall);
