@@ -28,20 +28,36 @@
 </header>
 <body>
   <!-- <div class="div-container" ></div> -->
-  <h1>Where is your business located?</h1>
-  <div class="input-address">
-    <input type="text" id="street-number" placeholder="Street Number">
-    <input type="text" id="address" placeholder="Street Name">
-    <input type="text" id="city" placeholder="City">
-    <input type="text" id="state" placeholder="State">
-    <input type="text" id="zipcode" placeholder="Zipcode">
-    <button id="address">Search</button>
+  <div class="body-container" >
+    <div class="prompt-question">
+      <h1>Where is your business located?</h1>
+    </div>
+    <div class="input-address">
+      <input type="text" id="street-number" placeholder="Street Number">
+      <input type="text" id="address" placeholder="Street Name">
+      <input type="text" id="city" placeholder="City">
+      <input type="text" id="state" placeholder="State">
+      <input type="text" id="zipcode" placeholder="Zipcode">
+      <button id="address">Search</button>
+    </div>
+    <!-- Below: as per Mapbox API -->
+    <div class="mapbox-map">
+      <div id='map' style='width: 400px; height: 300px;'></div>
+    </div>
   </div>
-
-  <!-- Below: as per Mapbox API -->
-  <div id='map' style='width: 400px; height: 300px;'></div>
- 
 </body>
-<footer></footer>
+<footer>
+  <div class="footer-container">
+    <div class="footer-image left">
+      <img class="img-footer left" src="./donas.png" alt="donuts">
+    </div>
+    <div class="footer-image middle">
+      <img class="img-footer left" src="./utensils.png" alt="utensils">
+    </div>
+    <div class="footer-image right">
+      <img class="img-footer left" src="./colorPalette.png" alt="color-palette">
+    </div>
+</div>
+</footer>
 
 </html>

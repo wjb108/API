@@ -55,7 +55,6 @@ header {
 }
 a.links:hover{
   color: #EFE0E0;
-
 }
 
 input {
@@ -71,4 +70,24 @@ h1 {
   color: #24272A;
   font-family: 'Libre Franklin', sans-serif;
   font-weight: 500;
+}
+
+.body-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: red;
+}
+footer{
+  background-color: royalblue;
+  
+}
+.footer-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.img-footer{
+  height: 152px;
 }
