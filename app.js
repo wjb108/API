@@ -89,9 +89,10 @@ function stripGeoCoordinates(coordinates) {
 }
 
 function addToCountryDropdown(country) {
+  countryCodeTwoLetter = country.country
   const newOptionValue = document.createElement('option')
-  newOptionValue.value = country
-  newOptionValue.innerText = country
+  newOptionValue.value = country.country
+  newOptionValue.innerText = country.name
   countryCode.appendChild(newOptionValue)
 }
 
@@ -99,7 +100,7 @@ async function getIP() {
   const urlIP = "https://get.geojs.io/v1/ip/country.json"
   try {
     const apiIp = await axios.get(urlIP)
-    countryCodeTwoLetter = apiIp.data.country
+    countryCodeTwoLetter = apiIp.data
     console.log(countryCodeTwoLetter);
     addToCountryDropdown(countryCodeTwoLetter)
   } catch (error) {
@@ -108,15 +109,15 @@ async function getIP() {
 }
 getIP()
 
-function stripCountryInfo(countryLists) {
-  countryLists.forEach((country) => {
-    const newOptionCountry = document.createElement('option')
-    newOptionCountry.value = country.alpha2Code
-    newOptionCountry.innerText = country.name
-    countryCode.appendChild(newOptionCountry)
-  })
-}
-stripCountryInfo()
+// function stripCountryInfo(countryLists) {
+//   countryLists.forEach((country) => {
+//     const newOptionCountry = document.createElement('option')
+//     newOptionCountry.value = country.alpha2Code
+//     newOptionCountry.innerText = country.name
+//     countryCode.appendChild(newOptionCountry)
+//   })
+// }
+// stripCountryInfo()
 
 async function getCountriesList() {
   const urlCountryList = "https://restcountries.eu/rest/v2/all"
@@ -124,7 +125,7 @@ async function getCountriesList() {
     const apiCountryList = await axios.get(urlCountryList)
     const apiCountryListArray = apiCountryList.data
     console.log(apiCountryListArray);
-    stripCountryInfo(apiCountryListArray)
+    // stripCountryInfo(apiCountryListArray)
   } catch (error) {
     console.log(error.message);
   }
