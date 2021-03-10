@@ -108,13 +108,23 @@ async function getIP() {
 }
 getIP()
 
+function stripCountryInfo(countryLists) {
+  countryLists.forEach((country) => {
+    const newOptionCountry = document.createElement('option')
+    newOptionCountry.value = country.alpha2Code
+    newOptionCountry.innerText = country.name
+    countryCode.appendChild(newOptionCountry)
+  })
+}
+stripCountryInfo()
+
 async function getCountriesList() {
   const urlCountryList = "https://restcountries.eu/rest/v2/all"
   try {
     const apiCountryList = await axios.get(urlCountryList)
     const apiCountryListArray = apiCountryList.data
     console.log(apiCountryListArray);
-    // stripeCountryInfo()
+    stripCountryInfo(apiCountryListArray)
   } catch (error) {
     console.log(error.message);
   }
