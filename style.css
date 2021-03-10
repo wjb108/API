@@ -49,6 +49,24 @@ a.links:hover{
   justify-content: center;
 }
 
+.container-form{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#country-two-letters{
+  margin: 10px 80px 10px 80px;
+  padding: 10px 40px 10px 40px;
+  border: none;
+  background-color: #FFFFFF;
+  border: none;
+  color: #636569;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
 .container-footer{
   display: flex;
   flex-direction: row;

@@ -63,7 +63,7 @@ function runGetCoordinates(event) {
   // console.log(`${inputAddress.value} `); could also string interpolate by const variables on rows 24-30 and pass through to formatAddress function
   formatAddress(`${inputValues["street-number"]} ${inputValues["address"]} ${inputValues["city"]} ${inputValues["state"]} ${inputValues["zipcode"]} `)
   console.log(searchAddress);
-  getCoordinates()
+  getCoordinates(event)
 }
 
 function renderDynamicMap(LongCoordinate, LatCoordinate) {
@@ -88,6 +88,8 @@ function stripGeoCoordinates(coordinates) {
   renderDynamicMap(longitude,latitude)
 }
 
+// stripCountryInfo()
+
 function addToCountryDropdown(country) {
   countryCodeTwoLetter = country.country
   const newOptionValue = document.createElement('option')
@@ -102,38 +104,51 @@ async function getIP() {
     const apiIp = await axios.get(urlIP)
     countryCodeTwoLetter = apiIp.data
     console.log(countryCodeTwoLetter);
-    addToCountryDropdown(countryCodeTwoLetter)
+    // addToCountryDropdown(countryCodeTwoLetter)
+    // console.log(countryCode.value);
+    return countryCodeTwoLetter
+
   } catch (error) {
     console.log(error.message);
   }
 }
-getIP()
+// getIP()
 
-// function stripCountryInfo(countryLists) {
-//   countryLists.forEach((country) => {
-//     const newOptionCountry = document.createElement('option')
-//     newOptionCountry.value = country.alpha2Code
-//     newOptionCountry.innerText = country.name
-//     countryCode.appendChild(newOptionCountry)
-//   })
-// }
-// stripCountryInfo()
+function stripCountryInfo(countryLists) {
+  countryLists.forEach((country, index) => {
+    const newOptionCountry = document.createElement('option')
+    newOptionCountry.value = country.alpha2Code || country.country 
+    newOptionCountry.innerText = country.name
+    countryCode.appendChild(newOptionCountry)
+    if (index === 0) {
+      countryCode.selected === newOptionCountry
+    }
+  })
+  console.log(countryCode.options[countryCode.selectedIndex]);
+}
+
+
+// Country List API
+// https://restcountries.eu/
 
 async function getCountriesList() {
   const urlCountryList = "https://restcountries.eu/rest/v2/all"
   try {
     const apiCountryList = await axios.get(urlCountryList)
     const apiCountryListArray = apiCountryList.data
+    const ipCountry = await getIP()
+    const IpCountryAndAllOthers = [ipCountry, {name: "---"} , ...apiCountryListArray]
     console.log(apiCountryListArray);
-    // stripCountryInfo(apiCountryListArray)
+    stripCountryInfo(IpCountryAndAllOthers)
   } catch (error) {
     console.log(error.message);
   }
 }
 getCountriesList()
 
-async function getCoordinates() {
-  const urlCoordinates = `${basePathGeo}/${searchAddress}.json?&access_token=${GaProjectToken}&country=${countryCodeTwoLetter}`
+async function getCoordinates(event) {
+  console.log(event.target);
+  const urlCoordinates = `${basePathGeo}/${searchAddress}.json?&access_token=${GaProjectToken}&country=${countryCode.value}`
   console.log(urlCoordinates);
   try {
     const apiGeoCall = await axios.get(urlCoordinates)
