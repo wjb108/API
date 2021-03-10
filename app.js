@@ -127,6 +127,19 @@ function stripCountryInfo(countryLists) {
   console.log(countryCode.options[countryCode.selectedIndex]);
 }
 
+// input validation
+// function inputNumberValidation (numberInput) {
+//   if Number.isInteger(numberInput)
+//     //
+//     else {
+//     alert("Invalid input. Please input a number")
+//     }
+// }
+
+// function inputTextValidation () {
+//   if 
+// }
+
 
 // Country List API
 // https://restcountries.eu/
