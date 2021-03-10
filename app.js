@@ -10,6 +10,7 @@ let zoom = 15;
 let rotateMap = 0; // optional parameter
 let width = 300;
 let height = 200;
+let countryCodeTwoLetter = ""
 
 // Mapbox Geocoding API
 //API Documentation
@@ -98,6 +99,18 @@ async function getCoordinates() {
     console.log(error.message);
   }
 }
+
+async function getIP() {
+  const urlIP = "https://get.geojs.io/v1/ip/country.json"
+  try {
+    const apiIp = await axios.get(urlIP)
+    countryCodeTwoLetter = apiIp.data.country
+    console.log(countryCodeTwoLetter);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+getIP()
 
 // Bits of Code no longer needed below
 
