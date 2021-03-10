@@ -28,6 +28,7 @@ const inputStreetNumber = document.querySelector('input#street-number')
 const inputZipcode = document.querySelector('input#zipcode')
 const inputCity = document.querySelector('input#city')
 const inputState = document.querySelector('input#state')
+const countryCode = document.querySelector('select#country-two-letters')
 
 //Event Listeners
 inputAddress.addEventListener('keyup', getText)
@@ -87,8 +88,41 @@ function stripGeoCoordinates(coordinates) {
   renderDynamicMap(longitude,latitude)
 }
 
+function addToCountryDropdown(country) {
+  const newOptionValue = document.createElement('option')
+  newOptionValue.value = country
+  newOptionValue.innerText = country
+  countryCode.appendChild(newOptionValue)
+}
+
+async function getIP() {
+  const urlIP = "https://get.geojs.io/v1/ip/country.json"
+  try {
+    const apiIp = await axios.get(urlIP)
+    countryCodeTwoLetter = apiIp.data.country
+    console.log(countryCodeTwoLetter);
+    addToCountryDropdown(countryCodeTwoLetter)
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+getIP()
+
+async function getCountriesList() {
+  const urlCountryList = "https://restcountries.eu/rest/v2/all"
+  try {
+    const apiCountryList = await axios.get(urlCountryList)
+    const apiCountryListArray = apiCountryList.data
+    console.log(apiCountryListArray);
+    // stripeCountryInfo()
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+getCountriesList()
+
 async function getCoordinates() {
-  const urlCoordinates = `${basePathGeo}/${searchAddress}.json?&access_token=${GaProjectToken}`
+  const urlCoordinates = `${basePathGeo}/${searchAddress}.json?&access_token=${GaProjectToken}&country=${countryCodeTwoLetter}`
   console.log(urlCoordinates);
   try {
     const apiGeoCall = await axios.get(urlCoordinates)
@@ -100,17 +134,7 @@ async function getCoordinates() {
   }
 }
 
-async function getIP() {
-  const urlIP = "https://get.geojs.io/v1/ip/country.json"
-  try {
-    const apiIp = await axios.get(urlIP)
-    countryCodeTwoLetter = apiIp.data.country
-    console.log(countryCodeTwoLetter);
-  } catch (error) {
-    console.log(error.message);
-  }
-}
-getIP()
+
 
 // Bits of Code no longer needed below
 
