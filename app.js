@@ -52,7 +52,7 @@ function formatAddress(address) {
 
 function getText(event) {
   inputValues[event.target.id] = event.target.value
-  console.dir(inputValues)
+  // console.dir(inputValues)
   // inputAddress.textContent = event.target.value // don't really need this for it to work
   // console.log(input.textContent = event.target.value)
   // console.log(event.target.value)
@@ -113,7 +113,7 @@ async function getIP() {
   try {
     const apiIp = await axios.get(urlIP)
     countryCodeTwoLetter = apiIp.data
-    console.log(countryCodeTwoLetter);
+    // console.log(countryCodeTwoLetter);
     // addToCountryDropdown(countryCodeTwoLetter)
     // console.log(countryCode.value);
     return countryCodeTwoLetter
@@ -134,7 +134,7 @@ function stripCountryInfo(countryLists) {
       countryCode.selected === newOptionCountry
     }
   })
-  console.log(countryCode.options[countryCode.selectedIndex]);
+  // console.log(countryCode.options[countryCode.selectedIndex]);
 }
 
 // input validation
@@ -165,7 +165,7 @@ async function getCountriesList() {
     const apiCountryListArray = apiCountryList.data
     const ipCountry = await getIP()
     const IpCountryAndAllOthers = [ipCountry, {name: "---"} , ...apiCountryListArray]
-    console.log(apiCountryListArray);
+    // console.log(apiCountryListArray);
     stripCountryInfo(IpCountryAndAllOthers)
   } catch (error) {
     console.log(error.message);
