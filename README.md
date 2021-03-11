@@ -8,7 +8,7 @@
 ### - Mapbox Geocoding API *(Generous Free Tier)*
 ### - Mapbox GL JS *(Generous Free Tier)*
 ---
-### MVP: Performs the following:
+### MVP: Performs the following: 
 ### - GeoJS takes your IP address and sets country as default value to country dropdown.
 ### - REST COUNTRIES populates all countries and appends them to the country dropdown. Should you be using a VPN you can select the appropriate country for your search. The country dropdown improves the relevancy of address search results in *that* country. If you search for an address in New York, the country **must** be set to the United States. 
 ### - Input validation of intended data types of the input fields increases the relevancy of address search results.
