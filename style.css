@@ -29,6 +29,15 @@ input {
   margin: 10px 40px 10px 40px;
 }
 
+
+.submitted input:invalid:required{
+  box-shadow: 0 0 3px 0.5px red;
+}
+
+input:valid{
+  border: none;
+}
+
 a.links:hover{
   color: #EFE0E0;
 }

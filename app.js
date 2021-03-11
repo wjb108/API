@@ -22,17 +22,19 @@ let searchAddress = ""
 let inputValues = {}
 
 //Selectors
-const inputAddress = document.querySelector('input#address')
 const btn = document.querySelector('button#address')
+const inputAddress = document.querySelector('input#address')
 const inputStreetNumber = document.querySelector('input#street-number')
 const inputZipcode = document.querySelector('input#zipcode')
 const inputCity = document.querySelector('input#city')
 const inputState = document.querySelector('input#state')
 const countryCode = document.querySelector('select#country-two-letters')
+const inputAddressDiv = document.querySelector('.input-address')
 
 //Event Listeners
 inputAddress.addEventListener('keyup', getText)
 inputStreetNumber.addEventListener('keyup', getText)
+// inputStreetNumber.addEventListener('input', inputNumberValidation)
 inputZipcode.addEventListener('keyup', getText)
 inputCity.addEventListener('keyup', getText)
 inputState.addEventListener('keyup', getText)
@@ -60,10 +62,20 @@ function getText(event) {
 
 function runGetCoordinates(event) {
   event.preventDefault();
+  inputAddressDiv.classList.add('submitted')
+  if (inputStreetNumber.value &&
+    inputAddress.value &&
+    inputCity.value &&
+    inputState.value &&
+    inputZipcode.value) {
+    formatAddress(`${inputValues["street-number"]} ${inputValues["address"]} ${inputValues["city"]} ${inputValues["state"]} ${inputValues["zipcode"]} `)
+    console.log(searchAddress);
+    getCoordinates(event)
+  } else {
+    alert("Invalid inputs are highighted in red!") //css turns blank input fields red
+  }
+
   // console.log(`${inputAddress.value} `); could also string interpolate by const variables on rows 24-30 and pass through to formatAddress function
-  formatAddress(`${inputValues["street-number"]} ${inputValues["address"]} ${inputValues["city"]} ${inputValues["state"]} ${inputValues["zipcode"]} `)
-  console.log(searchAddress);
-  getCoordinates(event)
 }
 
 function renderDynamicMap(LongCoordinate, LatCoordinate) {
@@ -77,8 +89,6 @@ function renderDynamicMap(LongCoordinate, LatCoordinate) {
   .setLngLat([LongCoordinate, LatCoordinate])
   .addTo(map);
 }
-
-
 
 function stripGeoCoordinates(coordinates) {
   let longitude = coordinates[0];
@@ -128,11 +138,15 @@ function stripCountryInfo(countryLists) {
 }
 
 // input validation
-// function inputNumberValidation (numberInput) {
-//   if Number.isInteger(numberInput)
-//     //
-//     else {
-//     alert("Invalid input. Please input a number")
+// function inputNumberValidation(integerInput) {
+//   // console.log(typeof integerInput);
+
+//   if (Number.isInteger(parseInt(integerInput))){
+//     // inputStreetNumber.setCustomValidity("")
+//     // console.log(integerInput);
+//     return true;
+//   }else {
+//     alert("I'm expecting a number")
 //     }
 // }
 
