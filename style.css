@@ -114,8 +114,8 @@ a.links:hover{
 }
 
 .localsumer-logo  {
-  height: 50;
-  width: 131;
+  height: 50px;
+  width: 131px;
 }
 
 .links {
@@ -134,6 +134,8 @@ a.links:hover{
   flex-direction: row;
   justify-content: space-between;
   background-color: #FFFFFF;
+  width: 100%;
+  height: auto;
 }
 
 .prompt-question{
@@ -155,4 +157,33 @@ button#address{
   color: #FFFFFF;
   border: none;
   margin: 20px;
+}
+
+/* Media Query */
+@media screen and (max-width: 600px){
+  
+  .navbar{
+   /* background-color: purple; */
+  }
+  .container-home-icon{
+    /* background-color: red; */
+    width: 50%;
+  }
+  .container-links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* background-color: aqua; */
+    width: 50%;
+  }
+  .localsumer-logo  {
+    height: 35px;
+    width: 111px;
+  }
+  h1 {
+    color: #24272A;
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 300;
+  }
+ 
 }
