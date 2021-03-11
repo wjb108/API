@@ -63,11 +63,11 @@ function getText(event) {
 function runGetCoordinates(event) {
   event.preventDefault();
   inputAddressDiv.classList.add('submitted')
-  if (inputStreetNumber.value &&
-    inputAddress.value &&
-    inputCity.value &&
-    inputState.value &&
-    inputZipcode.value) {
+  if (inputStreetNumber.checkValidity() &&
+    inputAddress.checkValidity() &&
+    inputCity.checkValidity() &&
+    inputState.checkValidity() &&
+    inputZipcode.checkValidity()) {
     formatAddress(`${inputValues["street-number"]} ${inputValues["address"]} ${inputValues["city"]} ${inputValues["state"]} ${inputValues["zipcode"]} `)
     console.log(searchAddress);
     getCoordinates(event)
