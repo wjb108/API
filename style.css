@@ -114,8 +114,8 @@ a.links:hover{
 }
 
 .localsumer-logo  {
-  height: 50px;
-  width: 131px;
+  height: 35px;
+  width: 111px;
 }
 
 .links {
@@ -175,10 +175,6 @@ button#address{
     justify-content: space-around;
     /* background-color: aqua; */
     width: 50%;
-  }
-  .localsumer-logo  {
-    height: 35px;
-    width: 111px;
   }
   h1 {
     color: #24272A;
