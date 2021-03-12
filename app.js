@@ -69,7 +69,7 @@ function runGetCoordinates(event) {
     inputState.checkValidity() &&
     inputZipcode.checkValidity()) {
     formatAddress(`${inputValues["street-number"]} ${inputValues["address"]} ${inputValues["city"]} ${inputValues["state"]} ${inputValues["zipcode"]} `)
-    console.log(searchAddress);
+    // console.log(searchAddress);
     getCoordinates(event)
   } else {
     alert("Invalid inputs are highighted in red!") //css turns blank input fields red
@@ -137,24 +137,6 @@ function stripCountryInfo(countryLists) {
   // console.log(countryCode.options[countryCode.selectedIndex]);
 }
 
-// input validation
-// function inputNumberValidation(integerInput) {
-//   // console.log(typeof integerInput);
-
-//   if (Number.isInteger(parseInt(integerInput))){
-//     // inputStreetNumber.setCustomValidity("")
-//     // console.log(integerInput);
-//     return true;
-//   }else {
-//     alert("I'm expecting a number")
-//     }
-// }
-
-// function inputTextValidation () {
-//   if 
-// }
-
-
 // Country List API
 // https://restcountries.eu/
 
@@ -174,13 +156,13 @@ async function getCountriesList() {
 getCountriesList()
 
 async function getCoordinates(event) {
-  console.log(event.target);
+  // console.log(event.target);
   const urlCoordinates = `${basePathGeo}/${searchAddress}.json?&access_token=${GaProjectToken}&country=${countryCode.value}`
-  console.log(urlCoordinates);
+  // console.log(urlCoordinates);
   try {
     const apiGeoCall = await axios.get(urlCoordinates)
     const apiGeoCallArray = apiGeoCall.data.features[0].center
-    console.log(apiGeoCallArray);
+    // console.log(apiGeoCallArray);
     stripGeoCoordinates(apiGeoCallArray)
   } catch (error) {
     console.log(error.message);
@@ -190,6 +172,25 @@ async function getCoordinates(event) {
 
 
 // Bits of Code no longer needed below
+
+
+// input validation
+// function inputNumberValidation(integerInput) {
+//   // console.log(typeof integerInput);
+
+//   if (Number.isInteger(parseInt(integerInput))){
+//     // inputStreetNumber.setCustomValidity("")
+//     // console.log(integerInput);
+//     return true;
+//   }else {
+//     alert("I'm expecting a number")
+//     }
+// }
+
+// function inputTextValidation () {
+//   if 
+// }
+
 
 // function renderMarker(LongCoordinate, LatCoordinate) {
 //   var marker = new mapboxgl.Marker()

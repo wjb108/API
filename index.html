@@ -37,13 +37,13 @@
 
     </form>
     <div class="input-address">
-      <input type="text" id="street-number" pattern="[0-9]{1,9999}" placeholder="Street Number" required>
-      <input type="text" id="address" placeholder="Street Name" pattern="[A-Z a-z]{1,25}" required>
+      <input type="text" id="street-number" pattern="[0000-9999]{1,9999}" placeholder="Street Number" required>
+      <input type="text" id="address" placeholder="Street Name" pattern="[A-Z a-z 0-9]{1,}" required>
       <input type="text" id="city" placeholder="City" pattern="[A-Z a-z]{1,25}" required>
       <input type="text" id="state" placeholder="State" pattern="[A-Z a-z]{1,25}" required>
       <input type="text" id="zipcode" placeholder="Zipcode" pattern="[0-9]{1,9999}" required>
     </div>
-    <div class="container-button">
+    <div class="container-button">  
       <button id="address">Generate Interactive Map</button>
     </div>
     <!-- Below: as per Mapbox API -->
