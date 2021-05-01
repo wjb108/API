@@ -1,5 +1,7 @@
 # Render A Dynamic Map 👉 [Link](https://wjb108.github.io/Mapbox-Dynamic-Map-API/)
 
+[![Render A Dynamic Map](https://cdn.loom.com/sessions/thumbnails/a4f9f9f771cb4126be0564999a3f6f1d-with-play.gif)](https://www.loom.com/share/a4f9f9f771cb4126be0564999a3f6f1d "Render A Dynamic Map")
+
 ### Project Description: 
 
 🗺️ Generates *interactive* map using the following APIs:
