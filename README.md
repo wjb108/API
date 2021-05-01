@@ -1,5 +1,4 @@
 # Mapbox-Dynamic-Map-API 👉 [Deployed Link](https://606646b8e074aa00075436c5--determined-hodgkin-b7c031.netlify.app/)
-### [Link](https://wjb108.github.io/API/)
 ---
 ### App Description: Generates *interactive* map
 ---
