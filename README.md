@@ -19,12 +19,6 @@
 4️⃣ Mapbox GL JS *(Generous Free Tier)*
 - Mapbox GL JS takes longitude and latitude coordinates as an input, generates an interactive map and places a marker on the location.
 
-
-### MVP: Performs the following: 
-
-
-
-
 ### Post-MVP: 
 - Use phone GPS location to generate longitude and latitude coordinates to render *interactive* map
 - Add multiple addresses 
