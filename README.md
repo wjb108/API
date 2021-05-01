@@ -21,5 +21,4 @@
 
 ### Post-MVP: 
 - Use phone GPS location to generate longitude and latitude coordinates to render *interactive* map
-- Add multiple addresses 
 - Use Mapbox Navigation APIs, in particular, optimization and directions to optimize best delivery route for multiple addresses
