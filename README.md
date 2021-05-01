@@ -3,10 +3,15 @@
 ### Project Description: 
 
 🗺️ Generates *interactive* map using the following APIs:
+
 1️⃣ GeoJS *(Free)*
+
 2️⃣ REST COUNTRIES *(Free)* 
+
 3️⃣ Mapbox Geocoding API *(Generous Free Tier)*
+
 4️⃣ Mapbox GL JS *(Generous Free Tier)*
+
 
 ### MVP: Performs the following: 
 ### - GeoJS takes your IP address and sets country as default value to country dropdown.
